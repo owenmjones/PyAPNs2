@@ -9,8 +9,6 @@ from freezegun import freeze_time
 
 from apns2.credentials import TokenCredentials
 
-TOPIC = 'com.example.first_app'
-
 
 @pytest.fixture
 def token_credentials():
@@ -24,14 +22,14 @@ def token_credentials():
 
 def test_token_expiration(token_credentials):
     with freeze_time('2012-01-14 12:00:00'):
-        header1 = token_credentials.get_authorization_header(TOPIC)
+        header1 = token_credentials.get_authorization_header()
 
     # 20 seconds later, before expiration, same JWT
     with freeze_time('2012-01-14 12:00:20'):
-        header2 = token_credentials.get_authorization_header(TOPIC)
+        header2 = token_credentials.get_authorization_header()
         assert header1 == header2
 
     # 35 seconds later, after expiration, new JWT
     with freeze_time('2012-01-14 12:00:40'):
-        header3 = token_credentials.get_authorization_header(TOPIC)
+        header3 = token_credentials.get_authorization_header()
         assert header3 != header1

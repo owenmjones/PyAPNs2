@@ -168,6 +168,9 @@ class Shutdown(APNsException):
 
 
 def exception_class_for_reason(reason: str) -> Type[APNsException]:
+    """
+    https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/handling_notification_responses_from_apns
+    """
     return {
         'BadCollapseId': BadCollapseId,
         'BadDeviceToken': BadDeviceToken,
