@@ -5,7 +5,7 @@ from enum import Enum
 from typing import Dict, Optional, Tuple, Union
 from httpx import Response
 
-from .credentials import CertificateCredentials, TokenCredentials
+from .credentials import CertificateCredentials
 from .errors import exception_class_for_reason
 from .payload import Payload
 
@@ -39,7 +39,7 @@ class APNsClient(object):
 
     def __init__(
         self,
-        credentials: Union[CertificateCredentials, TokenCredentials, str],
+        credentials: Union[CertificateCredentials, str],
         use_sandbox: bool = False,
         use_alternative_port: bool = False,
     ) -> None:

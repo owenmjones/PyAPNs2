@@ -9,7 +9,6 @@ setup(
     install_requires=[
         'httpx>=0.17.0',
         'h2==3.*',
-        'PyJWT>=1.4.0,<2.0.0',
         'cryptography>=1.7.2',
     ],
     extras_require={
