@@ -47,25 +47,6 @@ virtualenv venv
 pip install -e .[tests]
 ```
 
-To run the tests:
-```shell
-pytest
-```
-
-You can use `tox` for running tests with all supported Python versions:
-```shell
-pyenv install 3.5.6; pyenv install 3.6.7; pyenv install 3.7.1; pyenv install 3.8.0
-pyenv local 3.8.0 3.7.1 3.6.7 3.5.6
-pip install tox
-tox
-```
-
-To run the linter:
-```shell
-pip install pylint
-pylint --reports=n apns2 test
-```
-
 ## License
 
 PyAPNs2 is distributed under the terms of the MIT license.
