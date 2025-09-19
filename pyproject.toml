@@ -26,5 +26,5 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.7"
 cryptography = ">=1.7.2"
-h2 = "==3.*"
+h2 = "==4.*"
 httpx = ">=0.17.0"
